@@ -1,163 +1,670 @@
-body {
-    font-family: 'Arial', sans-serif;
-    margin: 0;
-    padding: 0;
-    margin: 0;
-    font-family: Arial, sans-serif;
-  }
+@import url("https://fonts.googleapis.com/css2?family=Libre+Baskerville&family=Roboto:wght@400;500;700&display=swap");
+@import url("https://fonts.cdnfonts.com/css/brush");
+@import url("https://fonts.cdnfonts.com/css/cupid-love-2");
 
-  header {
-    background-image: url("toalha.avif");
-    color: #fff;
-    padding: 1em;
-    text-align: center;
-  }
-
-  nav {  margin: 0;
-    font-family: Arial, sans-serif;
-    background: #129c12;
-    text-align: center;
-  }
-
-  nav>a {
-    text-decoration: none;
-  }
-
-    section {
-    padding: 2em;
-  }
-  
-
-  footer {
-    background-color: #333;
-    color: #fff;
-    text-align: center;
-    padding: 1em;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-  }
-  
-.form {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  --input-text-color: rgb(0, 0, 0);
-  --input-bg-color:white;
-  --focus-input-bg-color: white;
-  --text-color: #0b0c0c;
-  --active-color: red;
-  --width-of-input: 200px;
-  --inline-padding-of-input: 1.2em;
-  --gap: 0.9rem;
-}
-/* form style */
-.form {
-  font-size: 0.9rem;
-  display: flex;
-  gap: 0.5rem;
-  align-items: center;
-  width: var(--width-of-input);
-  position: relative;
-  isolation: isolate;
-}
-
-
-
-/* a fancy bg for showing background and border when focus. */
-.fancy-bg {
-  position: absolute;
-  width: 100%;
-  inset: 0;
-  background-color: white;
-  border-radius: 30px;
-  height: 100%;
-  z-index: -1;
-  pointer-events: none;
-  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
-}
-/* label styling */
-label {
-  width: 100%;
-  padding: 0.8em;
-  height: 40px;
-  padding-inline: var(--inline-padding-of-input);
-  display: flex;
-  align-items: center;
-}
-
-.search,.close-btn {
-  position: absolute;
-}
-/* styling search-icon */
-.search {
-  fill: var(--text-color);
-  left: var(--inline-padding-of-input);
-}
-/* svg -- size */
-svg {
-  width: 17px;
-  display: block;
-}
-/* styling of close button */
-.close-btn {
-  border: none;
-  right: var(--inline-padding-of-inputMenu);
+* {
+  scroll-behavior: smooth;
+  padding: 0;
+  margin: 0;
   box-sizing: border-box;
+  list-style: none;
+}
+
+:root {
+  --black: #000;
+  --gray-100: #e5e5e5;
+  --gray-900: #14100c;
+  --primary: #dd2d2d;
+  --white: #fff;
+}
+
+main {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+.navbar {
+  position: fixed;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--black);
+  padding: 20px 36px;
+  font-family: "Cupid Love", sans-serif;
+  gap: 20px;
+  z-index: 1;
+}
+
+#finalizar {
+  margin: 0;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  font-size: 22px;
+  height: 60px;
+}
+
+.navbar__cart {
+  display: flex;
+  align-items: center;
+}
+
+.navbar__title {
+  color: var(--white);
+  font-size: 40px;
+  line-height: 44px;
+  text-transform: uppercase;
+  text-align: center;
+  transition: all 200ms ease-in;
+}
+
+.navbar__brand {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.navbar__brand img {
+  height: 3rem;
+  width: 3rem;
+}
+
+.navbar__title span {
+  color: var(--primary);
+}
+
+.navbar__links {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.navbar__links li a {
+  color: var(--white);
+  text-transform: uppercase;
+  text-decoration: none;
+  font-size: 20px;
+  transition: all 200ms;
+}
+
+.navbar__links li a:hover {
+  color: #a91414;
+}
+
+.navbar__links li a i {
+  font-size: 30px;
+  color: #fff;
+}
+
+.navbar__links li a i:hover {
+  color: #a91414;
+}
+
+.navbar__links li a,
+.navbar__links .button {
+  font-size: 30px;
+  line-height: 34px;
+}
+
+.navbar__links .button {
+  text-transform: uppercase;
+}
+
+body {
+  font-size: 62.5%;
+  background-color: var(--gray-100);
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+.card__title,
+.button,
+.section__title {
+  font-family: "Cupid Love", sans-serif;
+}
+
+.section__subtitle,
+.card__ingredients {
+  font-family: "Roboto", sans-serif;
+}
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: auto;
+  align-items: center;
+  justify-content: center;
+  gap: 48px;
+  padding: 15px 5%;
+}
+
+.section__title {
+  color: var(--black);
+  font-size: 60px;
+  line-height: 72px;
+  font-weight: 400;
+  font-family: "Roboto", sans-serif;
+}
+
+.section__subtitle {
+  color: var(--gray-900);
+  margin-top: 12px;
+  font-size: 40px;
+  line-height: 48px;
+  text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.section__subtitle span {
+  font-weight: 700;
+}
+
+.section__title,
+.section__subtitle {
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.menu__cards {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(auto, 900px));
+  gap: 48px 30px;
+  width: 100%;
+}
+
+.card {
+  text-transform: uppercase;
+  background: #333;
+  border-radius: 60px;
+  background-size: cover;
+  width: 100%;
+  max-width: 900px;
+  padding: 40px 5%;
+}
+
+.card:nth-child(1) {
+  background-image: linear-gradient(rgba(29, 29, 29, 0.4), rgba(29, 29, 29, 0.4)), url("imagens/frango.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.card:nth-child(2) {
+  background-image: linear-gradient(rgba(29, 29, 29, 0.5), rgba(29, 29, 29, 0.5)), url("imagens/calabresa.jpg");
+}
+
+.card:nth-child(3) {
+  background-image: linear-gradient(rgba(29, 29, 29, 0.5), rgba(29, 29, 29, 0.5)), url("imagens/mista.jpg");
+}
+
+.card:nth-child(4) {
+  background-image: linear-gradient(rgba(29, 29, 29, 0.5), rgba(29, 29, 29, 0.5)), url("imagens/carne.jpg");
+  background-repeat: no-repeat;
+}
+
+.card__title {
+  color: var(--primary);
+  font-size: 45px;
+  line-height: 50px;
+  width: fit-content;
+}
+
+.card__title,
+.card__ingredients,
+.card__price {
+  margin-left: auto;
+  margin-right: 2rem;
+}
+
+.card__ingredients {
+  text-align: right;
+  margin-top: 8px;
+  font-size: 30px;
+  line-height: 36px;
+}
+
+.card__ingredients,
+.button--primary {
+  color: rgb(255, 255, 255);
+  float: right;
+  margin: 12px, 5px;
+}
+
+.button--primary {
+  background-color: var(--primary);
+  font-size: 45px;
+  line-height: 50px;
+  border-radius: 16px;
+  padding: 4px 12px;
+}
+
+.button--primary:hover {
+  background-color: #6a0f17;
+  transition: all 200ms;
+}
+
+.card__price {
+  margin-top: 28px;
+}
+
+.drinks {
+  display: flex;
+  border: 4px solid var(--gray-900);
+  border-radius: 44px;
+  padding: 44px 64px;
+  width: 90%;
+  max-width: 1200px;
+}
+
+.location {
+  background-color: var(--gray-900);
+  display: flex;
+  gap: 24px;
+  flex-direction: column;
+  align-items: center;
+  color: var(--white);
+  padding: 64px 0 120px;
+}
+
+.location .section__title,
+.location .section__subtitle {
+  color: var(--white);
+}
+
+.location__address {
+  font-size: 30px;
+  line-height: 36px;
+  font-family: "Bebas Neue", sans-serif;
+}
+
+.location iframe {
+  max-width: calc(100% - 40px);
+  border-radius: 32px;
+}
+
+.footer {
+  background-color: var(--black);
+}
+
+.footer .section__title,
+.footer .section__subtitle {
+  color: var(--white);
+  text-align: left;
+}
+
+.footer .section__title span {
+  color: var(--primary);
+}
+
+.footer__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: calc(100% - 40px);
+  max-width: 1460px;
+  margin: 0 auto;
+  gap: 32px;
+  padding: 32px 0;
+}
+
+.footer .button--primary {
+  padding: 16px 36px;
+  text-transform: uppercase;
+}
+
+.button {
+  width: fit-content;
+  border: 0;
+}
+
+.hero-header {
+  background: linear-gradient(0deg, #12120d, #12120d), #070606;
+}
+
+.hero-header p,
+.hero-header h1 {
+  color: var(--white);
+  text-align: left;
+}
+
+.hero-header img {
+  width: 100%;
+  margin-left: -60px;
+  margin-top: auto;
+}
+
+.hero-header span {
+  color: var(--primary);
+  font-family: "Cupid Love", sans-serif;
+}
+
+.hero-header h1 {
+  font-size: 120px;
+  line-height: 100px;
+  font-family: "Brush", sans-serif;
+}
+
+.hero-header__container {
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  height: 30rem;
+  background-image: linear-gradient(rgba(29, 29, 29, 0.8), rgba(29, 29, 29, 0.8)), url("imagens/fundopizza.jpg");
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.hero-header__content {
+  padding: 186px 0 186px 100px;
+  width: 100%;
+  max-width: 1100px;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  flex: 0 0 auto;
+}
+
+body table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0 30px;
+}
+body table thead tr {
+  border-bottom: 2px solid #ccc;
+}
+body table thead th {
+  text-align: left;
+  padding-bottom: 6px;
+  text-transform: uppercase;
+  color: #666;
+}
+body table tbody tr {
+  border-bottom: 1px solid #ccc;
+}
+body table tbody tr:last-child {
+  border: 0;
+}
+body table tbody tr td {
+  padding: 18px 20px;
+  font-size: 17px;
+  margin-right: 9rem;
+}
+
+body .produto {
+  display: flex;
+  align-items: center;
+}
+body .produto img {
+  border-radius: 6px;
+}
+body .produto .info {
+  margin-left: 1.7rem;
+}
+body .produto .info .produto-nome {
+  font-size: 25px;
+}
+
+button {
+  cursor: pointer;
+}
+
+.qtd {
+  background-color: #eee;
+  display: inline-flex;
+  padding: 0 0;
+  height: 26px;
+  overflow: hidden;
+  justify-content: space-around;
+  min-width: 50px;
+  align-items: center;
+  border-radius: 20px;
+}
+.qtd span {
+  margin: 0 10px;
+}
+.qtd button {
+  display: flex;
+  align-items: center;
+  background-color: transparent;
+  border: 0;
+  padding: 0 10px;
+  height: 100%;
+  font-size: 16px;
+}
+.qtd button:hover {
+  background-color: #ddd;
+  transition: all 200ms;
+}
+
+.delete {
+  margin-left: 50px;
+  background-color: transparent;
+  border: 0;
+  width: 30px;
+  height: 30px;
+  border-radius: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #fff;
-  padding: 0.1em;
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  background: var(--active-color);
-  opacity: 0;
-  visibility: hidden;
+  font-size: 27px;
 }
-/* styling of input */
-.input {
-  color: var(--input-text-color);
+.delete:hover {
+  background-color: #4dce7a;
+  transition: all 400ms ease-in;
+}
+
+aside {
+  margin-left: 4rem;
+}
+aside .box {
+  border-radius: 12px;
+  margin-bottom: 15px;
+  border: solid 1px #ccc;
+  background-color: #ddd;
+  font-size: 14px;
+  font-weight: 100;
+}
+aside .box header {
+  padding: 15px 20px;
+  font-size: 25px;
+  font-weight: 100;
+  text-align: center;
+  border-bottom: 1px solid #ccc;
+}
+aside .box .info {
+  padding: 20px;
+}
+aside .box .info > div {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 6px;
+  color: #333;
+}
+aside .box footer {
+  background-color: #d1d1d1;
+  padding: 15px 20px;
+  font-size: 22px;
+  display: flex;
+  justify-content: space-between;
+}
+aside > button {
+  border-radius: 12px;
+  border: 0;
+  padding: 15px 0;
+  color: white;
+  background-color: #28a745;
+  display: block;
   width: 100%;
-  margin-inline: min(2em,calc(var(--inline-padding-of-input) + var(--gap)));
-  background: none;
-  border: none;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 16px;
 }
 
-.input:focus {
-  outline: none;
+aside > button:hover {
+  background-color: #3bc55b;
+  transition: all 300ms;
 }
 
-.input::placeholder {
-  color: var(--text-color)
-}
-/* input background change in focus */
-.input:focus ~ .fancy-bg {
-  border: 1px solid var(--active-color);
-  background: var(--focus-input-bg-color);
-}
-/* search icon color change in focus */
-.input:focus ~ .search {
-  fill: var(--active-color);
-}
-/* showing close button when typing */
-.input:valid ~ .close-btn {
-  opacity: 1;
-  visibility: visible;
-}
-/* this is for the default background in input,when selecting autofill options -- you can remove this code if you do not want to override the browser style. */
-input:-webkit-autofill,
-input:-webkit-autofill:hover,
-input:-webkit-autofill:focus,
-input:-webkit-autofill:active {
-  -webkit-transition: "color 9999s ease-out, background-color 9999s ease-out";
-  -webkit-transition-delay: 9999s;
+.menu-celular {
+  display: none;
 }
 
-footer {
-  background: #129c12;
+@media (min-width: 900px) {
+  .navbar__links {
+    gap: 20px;
+  }
 }
-	
 
+@media (max-width: 900px) {
+  .navbar {
+    padding: 0 1rem;
+    position: relative;
+  }
 
+  .navbar svg {
+    height: 60px;
+    width: 60px;
+  }
+
+  .navbar__links {
+    flex-direction: column;
+    display: none;
+  }
+
+  .navbar__title {
+    font-size: 20px;
+    line-height: 24px;
+  }
+
+  .navbar__links li a {
+    font-size: 16px;
+    line-height: 20px;
+    display: none;
+  }
+
+  .menu-celular {
+    display: block;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+  }
+
+  .hero-header {
+    display: none;
+  }
+
+  .menu__cards {
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    justify-items: center;
+  }
+
+  .line {
+    fill: none;
+    stroke: #fff;
+    stroke-width: 6;
+    transition:
+      stroke-dasharray 600ms cubic-bezier(0.4, 0, 0.2, 1),
+      stroke-dashoffset 600ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .line1 {
+    stroke-dasharray: 60 207;
+    stroke-width: 6;
+  }
+  .line2 {
+    stroke-dasharray: 60 60;
+    stroke-width: 6;
+  }
+  .line3 {
+    stroke-dasharray: 60 207;
+    stroke-width: 6;
+  }
+  .opened .line1 {
+    stroke-dasharray: 90 207;
+    stroke-dashoffset: -134;
+    stroke-width: 6;
+  }
+  .opened .line2 {
+    stroke-dasharray: 1 60;
+    stroke-dashoffset: -30;
+    stroke-width: 6;
+  }
+  .opened .line3 {
+    stroke-dasharray: 90 207;
+    stroke-dashoffset: -134;
+    stroke-width: 6;
+  }
+
+  .section__title {
+    font-size: 32px;
+    line-height: 36px;
+  }
+
+  .section__subtitle {
+    font-size: 20px;
+    line-height: 24px;
+  }
+
+  .card {
+    border-radius: 1.3rem;
+    padding: 20px 0;
+  }
+
+  .card__title {
+    font-size: 20px;
+    
+  }
+
+  .card__title,
+  .card__ingredients,
+  .card__price {
+    margin-right: 10px;
+  }
+
+  .card__ingredients {
+    display: none;
+  }
+
+  .button {
+    font-size: 18px;
+    line-height: 12px;
+  }
+
+  .drinks {
+    width: 100%;
+    padding: 20px;
+  }
+
+  body table {
+    margin: 0;
+  }
+
+  body table tbody tr td {
+    padding: 8px 8px;
+  }
+
+  iframe {
+    height: 310px;
+  }
+
+  .location__address {
+    font-size: 16px;
+    line-height: 20px;
+  }
+
+  .footer__container {
+    flex-direction: column;
+    padding: 0.3rem 0;
+  }
+
+  .footer__container h2 {
+    font-size: 20px;
+  }
+
+  .footer__container p {
+    font-size: 12px;
+  }
+}
